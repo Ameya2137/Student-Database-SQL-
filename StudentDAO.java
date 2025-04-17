@@ -82,4 +82,13 @@ public class StudentDAO {
         return null;  // Return null if student not found
     }
 
+    // Updating an existing student's information
+    public boolean updateStudent(Student student) {
+        try (
+            // Preparing SQL update statement
+            Connection conn = DBConnection.getConnection();
+            PreparedStatement ps = conn.prepareStatement(
+                "UPDATE students SET name=?, branch=?, batch=?, cgpa=? WHERE prn=?")
+        ) 
+
 
