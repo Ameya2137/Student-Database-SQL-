@@ -60,5 +60,19 @@ public class StudentDAO {
             // Preparing SQL query with a WHERE clause
             Connection conn = DBConnection.getConnection();
             PreparedStatement ps = conn.prepareStatement("SELECT * FROM students WHERE prn = ?")
-        ) 
+        ) {
+            ps.setInt(1, prn);  // Set PRN in the query
+            ResultSet rs = ps.executeQuery();
+
+            // If student is found, create and return Student object
+            if (rs.next()) {
+                return new Student(
+                    rs.getString("name"),
+                    prn,
+                    rs.getString("branch"),
+                    rs.getString("batch"),
+                    rs.getFloat("cgpa")
+                );
+            }
+        } 
 
