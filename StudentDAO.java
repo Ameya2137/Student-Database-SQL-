@@ -26,3 +26,6 @@ public class StudentDAO {
             System.out.println("Error adding student: " + e.getMessage());
         }
     }
+    // Retrieve all students from the database
+    public ArrayList<Student> getAllStudents() {
+        ArrayList<Student> list = new ArrayList<>();
