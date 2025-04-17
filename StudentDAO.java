@@ -107,5 +107,13 @@ public class StudentDAO {
         return false;  // Return false if update fails
     }
 
+    // Deletes a student record based on PRN
+    public boolean deleteStudent(int prn) {
+        try (
+            // Preparing SQL delete statement
+            Connection conn = DBConnection.getConnection();
+            PreparedStatement ps = conn.prepareStatement("DELETE FROM students WHERE prn = ?")
+        )
+
 
 
