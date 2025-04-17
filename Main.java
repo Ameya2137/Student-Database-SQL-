@@ -88,6 +88,9 @@ public class Main {
                     // Handle invalid choice
                     System.out.println("Invalid choice.");
             }
+        } while (choice != 6);  // Continue until user chooses to exit
+    }
+}
 
 
 
