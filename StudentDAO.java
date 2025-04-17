@@ -46,3 +46,11 @@ public class StudentDAO {
                     rs.getFloat("cgpa")
                 ));
             }
+        } catch (SQLException e) {
+            // Handle SQL errors
+            System.out.println("Error fetching students: " + e.getMessage());
+        }
+
+        return list;
+    }
+
