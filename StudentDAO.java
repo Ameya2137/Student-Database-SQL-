@@ -99,6 +99,13 @@ public class StudentDAO {
 
             // Execute update and return true if successful
             return ps.executeUpdate() > 0;
-        } 
+        } catch (SQLException e) {
+            // Handle SQL errors
+            System.out.println("Error updating student: " + e.getMessage());
+        }
+
+        return false;  // Return false if update fails
+    }
+
 
 
