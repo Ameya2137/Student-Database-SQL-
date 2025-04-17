@@ -35,4 +35,14 @@ public class StudentDAO {
             Connection conn = DBConnection.getConnection();
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT * FROM students")
-        ) 
+        ) {
+            // Iterating over the result set and create Student objects
+            while (rs.next()) {
+                list.add(new Student(
+                    rs.getString("name"),
+                    rs.getInt("prn"),
+                    rs.getString("branch"),
+                    rs.getString("batch"),
+                    rs.getFloat("cgpa")
+                ));
+            }
