@@ -55,5 +55,24 @@ public class Main {
                     else
                         System.out.println("Student not found.");
                 }
+                case 4 -> {
+                    // Update an existing student's details
+                    System.out.print("Enter PRN of student to update: ");
+                    int prn = scan.nextInt(); 
+                    scan.nextLine();
+                    System.out.print("Enter New Name: ");
+                    String name = scan.nextLine();
+                    System.out.print("Enter New Branch: ");
+                    String branch = scan.nextLine();
+                    System.out.print("Enter New Batch: ");
+                    String batch = scan.nextLine();
+                    System.out.print("Enter New CGPA: ");
+                    float cgpa = scan.nextFloat();
+
+                    // Attempt to update student
+                    boolean updated = operations.updateStudent(new Student(name, prn, branch, batch, cgpa));
+                    System.out.println(updated ? "Updated successfully." : "Student not found.");
+                }
+
 
 
