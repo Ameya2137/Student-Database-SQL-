@@ -20,3 +20,24 @@ public class Main {
             System.out.print("Enter your choice: ");
             choice = scan.nextInt();  // Reading user's choice
             scan.nextLine();  // Consuming leftover newline
+
+            // Handling user choice using switch-case
+            switch (choice) {
+                case 1 -> {
+                    // Adding a new student
+                    System.out.print("Enter Name: ");
+                    String name = scan.nextLine();
+                    System.out.print("Enter PRN: ");
+                    int prn = scan.nextInt();
+                    scan.nextLine();  // Consume newline
+                    System.out.print("Enter Branch: ");
+                    String branch = scan.nextLine();
+                    System.out.print("Enter Batch: ");
+                    String batch = scan.nextLine();
+                    System.out.print("Enter CGPA: ");
+                    float cgpa = scan.nextFloat();
+
+                    // Add student to database
+                    operations.addStudent(new Student(name, prn, branch, batch, cgpa));
+                }
+
