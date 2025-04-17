@@ -41,3 +41,19 @@ public class Main {
                     operations.addStudent(new Student(name, prn, branch, batch, cgpa));
                 }
 
+                case 2 -> 
+                    // Display all students
+                    operations.displayStudents();
+
+                case 3 -> {
+                    // Search for a student by PRN
+                    System.out.print("Enter PRN: ");
+                    int prn = scan.nextInt();
+                    Student s = operations.searchByPRN(prn);
+                    if (s != null)
+                        s.display();  // If found, display student info
+                    else
+                        System.out.println("Student not found.");
+                }
+
+
