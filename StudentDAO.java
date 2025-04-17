@@ -74,5 +74,12 @@ public class StudentDAO {
                     rs.getFloat("cgpa")
                 );
             }
-        } 
+        } catch (SQLException e) {
+            // Handle SQL errors
+            System.out.println("Error searching by PRN: " + e.getMessage());
+        }
+
+        return null;  // Return null if student not found
+    }
+
 
