@@ -10,4 +10,12 @@ public class DBConnection {
   // MySQL username and password
   private static final String USER = "enter here"; // The username of your MySQL Workbench
   private static final String PASSWORD = "enter here"; // The password of your MYSQl Workbench
+
+  // Method to establish and return a connection to the database
+    public static Connection getConnection() throws SQLException {
+        // Uses DriverManager to create a connection using the URL, username, and password
+        return DriverManager.getConnection(URL, USER, PASSWORD);
+    }
+}
+
   
