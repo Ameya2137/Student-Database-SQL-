@@ -89,6 +89,16 @@ public class StudentDAO {
             Connection conn = DBConnection.getConnection();
             PreparedStatement ps = conn.prepareStatement(
                 "UPDATE students SET name=?, branch=?, batch=?, cgpa=? WHERE prn=?")
-        ) 
+        ) {
+            // Set updated values in the query
+            ps.setString(1, student.getName());
+            ps.setString(2, student.getBranch());
+            ps.setString(3, student.getBatch());
+            ps.setFloat(4, student.getCGPA());
+            ps.setInt(5, student.getPRN());
+
+            // Execute update and return true if successful
+            return ps.executeUpdate() > 0;
+        } 
 
 
