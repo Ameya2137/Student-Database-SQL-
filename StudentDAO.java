@@ -54,3 +54,11 @@ public class StudentDAO {
         return list;
     }
 
+    // Searching for a student by PRN (Primary Roll Number)
+    public Student searchByPRN(int prn) {
+        try (
+            // Preparing SQL query with a WHERE clause
+            Connection conn = DBConnection.getConnection();
+            PreparedStatement ps = conn.prepareStatement("SELECT * FROM students WHERE prn = ?")
+        ) 
+
