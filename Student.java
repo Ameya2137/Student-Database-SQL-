@@ -16,10 +16,16 @@ public class Student {
         this.cgpa = cgpa;
     }
 
-    // Getter for name, PRN, branch, batch, CGPA
+    // Getter methods for name, PRN, branch, batch, CGPA
     public String getName() { return name; }
     public int getPRN() { return prn; }
     public String getBranch() { return branch; }
     public String getBatch() { return batch; }
     public float getCGPA() { return cgpa; }
+
+    // Setter methods for name, branch, batch, CGPA
+    public void setName(String name) { this.name = name; }
+    public void setBranch(String branch) { this.branch = branch; }
+    public void setBatch(String batch) { this.batch = batch; }
+    public void setCGPA(float cgpa) { this.cgpa = cgpa; }
 
