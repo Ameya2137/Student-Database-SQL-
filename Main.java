@@ -80,6 +80,15 @@ public class Main {
                     System.out.println(operations.deleteStudent(prn) ? "Deleted successfully." : "Student not found.");
                 }
 
+                case 6 -> 
+                    // Exit the program
+                    System.out.println("Exiting...");
+
+                default -> 
+                    // Handle invalid choice
+                    System.out.println("Invalid choice.");
+            }
+
 
 
 
