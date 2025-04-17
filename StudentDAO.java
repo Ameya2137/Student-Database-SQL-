@@ -113,7 +113,19 @@ public class StudentDAO {
             // Preparing SQL delete statement
             Connection conn = DBConnection.getConnection();
             PreparedStatement ps = conn.prepareStatement("DELETE FROM students WHERE prn = ?")
-        )
+        ) {
+            ps.setInt(1, prn);  // Set PRN in the query
+
+            // Execute delete and return true if a record was removed
+            return ps.executeUpdate() > 0;
+        } catch (SQLException e) {
+            // Handle SQL errors
+            System.out.println("Error deleting student: " + e.getMessage());
+        }
+
+        return false;  // Return false if delete fails
+    }
+}
 
 
 
