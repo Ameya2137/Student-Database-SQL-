@@ -28,5 +28,9 @@ This Java project is a Student Database Management System using MySQL for storag
 - Command Line / Terminal
 
 ## How to Run 
+- Clone the repository: https://github.com/Ameya2137/Student-Database-SQL-.git
+- Navigate to the project directory: cd Student-Database-SQL-
+- Compile the Java files: javac -cp ".;mysql-connector-j-9.2.0.jar" *.java
+- Run the program: java -cp ".;mysql-connector-j-9.2.0.jar" Main
 
 
